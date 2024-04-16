@@ -1,38 +1,82 @@
+/*
+These are the hexcodes for the SPIS colour scheme:
+ - #171d25  (Black)
+ - #24282f  (Grey)
+ - #1a9fff  (Blue)
+*/
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 60vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 0s ease-in-out;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #171d25;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #1a9fff;
+  font-family: "Segoe UI";
 }
 
-.App-link {
-  color: #61dafb;
+.App-Form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 75px;
+}
+
+.App-Input {
+  width: 800px;
+
+  padding: 8px;
+  border: 0;
+
+  font-size: calc(30px + 2vmin);
+  color: white;
+  background-color: #24282f;
+  font-family: "Segoe UI";
+}
+
+.App-Button-Image {
+  width: 100%;
+  height: 100%;
+}
+
+.App-Button {
+  width: 75px;
+
+  padding: 8px;
+  border: 0;
+
+  color: white;
+  background-color: #24282f;
+  font-family: "Segoe UI";
+}
+
+.App-Button:hover {
+  color:#1a9fff;
+  background-color: #30343c;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  0%, 100% {
+    transform: rotate(-2deg);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotate(2deg);
   }
 }

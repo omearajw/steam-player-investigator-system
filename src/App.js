@@ -1,5 +1,7 @@
 import logo from './logo.svg';
+import search from './search.svg';
 import './App.css';
+import showSubmittedPopup from './Search.js';
 
 function App() {
   return (
@@ -7,16 +9,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Enter the link to the steam account you wish to check
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <form className="App-Form" onSubmit={showSubmittedPopup}>
+          <input className="App-Input" type="text" placeholder="https://steamcommunity.com/id/..."/>
+          <button type="submit" className="App-Button"><img src={search} className='App-Button-Image'/></button>
+        </form>
       </header>
     </div>
   );
