@@ -5,6 +5,12 @@ These are the hexcodes for the SPIS colour scheme:
  - #1a9fff  (Blue)
 */
 
+:root {
+  --color-Main: #24282f;
+  --color-Secondary: #171d25;
+  --color-Accent: #1a9fff;
+}
+
 .App {
   text-align: center;
 }
@@ -21,21 +27,20 @@ These are the hexcodes for the SPIS colour scheme:
 }
 
 .App-header {
-  background-color: #171d25;
+  background-color: var(--color-Main);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #1a9fff;
+  color: var(--color-Accent);
   font-family: "Segoe UI";
 }
 
 .App-Form {
   display: flex;
   justify-content: center;
-  width: 100%;
   height: 75px;
 }
 
@@ -44,10 +49,11 @@ These are the hexcodes for the SPIS colour scheme:
 
   padding: 8px;
   border: 0;
+  outline: none;
 
   font-size: calc(30px + 2vmin);
   color: white;
-  background-color: #24282f;
+  background-color: var(--color-Secondary);
   font-family: "Segoe UI";
 }
 
@@ -63,7 +69,7 @@ These are the hexcodes for the SPIS colour scheme:
   border: 0;
 
   color: white;
-  background-color: #24282f;
+  background-color: var(--color-Secondary);
   font-family: "Segoe UI";
 }
 
@@ -79,4 +85,34 @@ These are the hexcodes for the SPIS colour scheme:
   50% {
     transform: rotate(2deg);
   }
+}
+
+@keyframes App-error-shake {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  33% {
+    transform: translateX(-10px);
+  }
+  66% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes App-red-flash {
+  0%, 100% {
+    background-color: #24282f;
+  }
+  50% {
+    background-color: brown;
+  }
+}
+
+.Error-shake-animation {
+  animation: App-error-shake 0.35s ease-in-out forwards;
+  /* animation: App-red-flash 0.5s ease-in-out forwards; */
+}
+
+.Error-red-flash {
+  animation: App-red-flash 0.35s ease-in-out forwards;
 }
