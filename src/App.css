@@ -5,6 +5,7 @@ These are the hexcodes for the SPIS colour scheme:
  - #1a9fff  (Blue)
 */
 
+/* Colour variables to easily change colour scheme */
 :root {
   --color-Main: #24282f;
   --color-Secondary: #171d25;
@@ -78,15 +79,7 @@ These are the hexcodes for the SPIS colour scheme:
   background-color: #30343c;
 }
 
-@keyframes App-logo-spin {
-  0%, 100% {
-    transform: rotate(-2deg);
-  }
-  50% {
-    transform: rotate(2deg);
-  }
-}
-
+/* Keyframes to shake the form left and right */
 @keyframes App-error-shake {
   0%, 100% {
     transform: translateX(0px);
@@ -99,6 +92,7 @@ These are the hexcodes for the SPIS colour scheme:
   }
 }
 
+/* Keyframes to flash something red */
 @keyframes App-red-flash {
   0%, 100% {
     background-color: #24282f;
@@ -108,11 +102,12 @@ These are the hexcodes for the SPIS colour scheme:
   }
 }
 
+/* Shake animation */
 .Error-shake-animation {
   animation: App-error-shake 0.35s ease-in-out forwards;
-  /* animation: App-red-flash 0.5s ease-in-out forwards; */
 }
 
+/* Red flash animation */
 .Error-red-flash {
   animation: App-red-flash 0.35s ease-in-out forwards;
 }

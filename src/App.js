@@ -3,24 +3,35 @@ import search from './search.svg';
 import './App.css';
 import showSubmittedPopup from './Search.js';
 
+// Main app
 function App() {
+  // Function to check if the URL input by the user is valid
   function isValidSteamUrl(url) {
+    // Pattern for the format of a steam profile link
     const steamUrlRegex = /^https:\/\/steamcommunity\.com\/id\/[a-zA-Z0-9_-]+\/?$/;
+    // Returns true of false if the URL conforms to the format
     return steamUrlRegex.test(url);
   }
+
+  // Submission handler taking the submission event
   const handleSubmit = (event) => {
+    // Prevents default submission behaviour (page refresh)
     event.preventDefault();
-    console.log(event.target)
+    // Gets value from the input
     const steamUrlInput = event.target.elements.steamUrl.value;
+    // Calls checker function to see if URL is valid
     if (isValidSteamUrl(steamUrlInput)) {
       showSubmittedPopup();
+    // If URL is invalid
     } else {
+      // Get the input, button and form and add animations to them
       const steamUrlInput = event.target.elements.steamUrl;
       const urlInputButton = event.target.elements.urlInputButton;
       const urlInputForm = event.currentTarget;
       urlInputForm.classList.add('Error-shake-animation');
       steamUrlInput.classList.add('Error-red-flash');
       urlInputButton.classList.add('Error-red-flash');
+      // After 350ms (animation duration) remove the animations
       setTimeout(() => {
         urlInputForm.classList.remove('Error-shake-animation');
         steamUrlInput.classList.remove('Error-red-flash');
@@ -28,6 +39,7 @@ function App() {
       }, 350);
     }
   }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -35,6 +47,7 @@ function App() {
         <p>
           Enter the link to the steam account you wish to check
         </p>
+        {/* Form containing the input and button */}
         <form className="App-Form" onSubmit={handleSubmit} name="urlInputForm">
           <input 
           className="App-Input"
