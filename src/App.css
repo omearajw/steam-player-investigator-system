@@ -12,8 +12,24 @@ These are the hexcodes for the SPIS colour scheme:
   --color-Accent: #1a9fff;
 }
 
+*{
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
 .App {
   text-align: center;
+  max-height: 100vh;
+  overflow: hidden; 
+}
+
+.App.expanded {
+  max-height: 100%; 
+  transition: max-width 0.5s ease; 
+  text-align: center;
+  overflow: hidden; 
 }
 
 .App-logo {

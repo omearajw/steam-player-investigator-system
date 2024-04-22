@@ -1,10 +1,15 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import search from './search.svg';
 import './App.css';
-import showSubmittedPopup from './Search.js';
+import { Results, ScrollToResults} from './Results.js';
+
+// https://steamcommunity.com/id/test
 
 // Main app
 function App() {
+  // State variable to manage whether results should be displayed
+  const [showResults, setShowResults] = useState(false);
   // Function to check if the URL input by the user is valid
   function isValidSteamUrl(url) {
     // Pattern for the format of a steam profile link
@@ -21,9 +26,11 @@ function App() {
     const steamUrlInput = event.target.elements.steamUrl.value;
     // Calls checker function to see if URL is valid
     if (isValidSteamUrl(steamUrlInput)) {
-      showSubmittedPopup();
+      setShowResults(true);
+      ScrollToResults();
     // If URL is invalid
     } else {
+      setShowResults(false);
       // Get the input, button and form and add animations to them
       const steamUrlInput = event.target.elements.steamUrl;
       const urlInputButton = event.target.elements.urlInputButton;
@@ -41,7 +48,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={`App ${showResults ? 'expanded' : ''}`}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -53,10 +60,12 @@ function App() {
           className="App-Input"
           type="text"
           name="steamUrl"
-          placeholder="https://steamcommunity.com/id/..."
-          required/>
+          placeholder="https://steamcommunity.com/id/..."/>
           <button type="submit" className="App-Button" name="urlInputButton"><img src={search} className='App-Button-Image'/></button>
         </form>
+      </header>
+      <header className="App-header">
+        {showResults && <Results/>}
       </header>
     </div>
   );
