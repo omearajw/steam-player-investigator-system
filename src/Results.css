@@ -1,0 +1,56 @@
+/* Colour variables to easily change colour scheme */
+
+:root {
+    --color-Main: #24282f;
+    --color-Secondary: #171d25;
+    --color-Accent: #1a9fff;
+  }  
+  
+  .Results-Div {
+    background-color: var(--color-Main);
+    color: var(--color-Accent);
+  }
+  
+  .Result-Section {
+    font-size: calc(10px + 2vmin);
+    color: var(--color-Accent);
+    font-family: "Segoe UI";
+    padding: 100px;
+  }
+
+  .Result-Subtitle{
+    text-decoration: underline;
+    margin-top: 300px;
+    font-size: 30px;
+  }
+
+  .Result-Header {
+    font-size: calc(30px + 2vmin);
+  }
+
+  .Result-Div-Main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .Result-Header-Main {
+    font-size: calc(30px + 2vmin);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Result-Section-Left {
+    align-items: left;
+    text-align: left;
+  }
+
+  .Result-Section-Right {
+    align-items: right;
+    text-align: right;
+  }
+

@@ -12,6 +12,7 @@ These are the hexcodes for the SPIS colour scheme:
   --color-Accent: #1a9fff;
 }
 
+/* Makes the scrollbar invisible */
 *{
   -ms-overflow-style: none;
 }

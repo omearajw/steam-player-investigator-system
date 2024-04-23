@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import search from './search.svg';
 import './App.css';
+import './Results.css';
 import { Results, ScrollToResults} from './Results.js';
 
 // https://steamcommunity.com/id/test
@@ -10,6 +11,7 @@ import { Results, ScrollToResults} from './Results.js';
 function App() {
   // State variable to manage whether results should be displayed
   const [showResults, setShowResults] = useState(false);
+
   // Function to check if the URL input by the user is valid
   function isValidSteamUrl(url) {
     // Pattern for the format of a steam profile link
@@ -64,7 +66,7 @@ function App() {
           <button type="submit" className="App-Button" name="urlInputButton"><img src={search} className='App-Button-Image'/></button>
         </form>
       </header>
-      <header className="App-header">
+      <header className="Results-Header">
         {showResults && <Results/>}
       </header>
     </div>
