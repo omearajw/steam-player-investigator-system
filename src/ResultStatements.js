@@ -34,7 +34,7 @@ export const numOfFriendsStatement = ({score}) => {
         statement = "They have loads of friends, making it pretty unlikely this is a smurf account."
     }   
     else if ((score >= 0.5) && (score < 0.90)) {
-        statement = "They've got quite a few freinds. Chances are this is no smurf."
+        statement = "They've got quite a few friends. Chances are this is no smurf."
     }
     else if ((score >= 0.25) && (score < 0.5)) {
         statement = "They have a decent number of friends. Unlikely to be a smurf"
@@ -85,7 +85,7 @@ export const accountAgeStatement = ({score}) => {
     let statement = "This is awkward."
 
     if (score >= 3650.0) {
-        statement = "This account is at least 10 years old. No smurfs here."
+        statement = "This account is over 10 years old - no smurfs here."
     }
     else if ((score >= 730) && (score < 3650.0)) {
         statement = "This account is been around for a while making it pretty unlikely to be a smurf."

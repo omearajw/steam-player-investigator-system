@@ -14,7 +14,9 @@
   .Result-Section {
     font-size: calc(10px + 2vmin);
     font-family: "Segoe UI";
-    padding: 100px;
+    padding-bottom: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .Result-Subtitle{
@@ -31,8 +33,7 @@
   .Result-Div-Main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    height: 95vh;
   }
 
   .Result-Header-Main {
@@ -44,23 +45,36 @@
     text-align: center;
   }
 
-  .Result-Paragraph {
-    color: white;
-  }
-
   .Result-Section-Left {
     background:linear-gradient(to right, var(--color-Secondary),transparent);
     padding: 10px; padding-left: 50px; padding-top: 30px;
     align-items: left;
+    justify-content: left;
     text-align: left;
     border-left: 10px solid rgb(24, 24, 24);
+  }
+
+  .Result-Paragraph-Left {
+    font-size: calc(5px + 2vmin);
+    color: white;
+    max-width: 50%; /* Adjust the maximum width as needed */
+    margin-right: 55%;
+    text-wrap: balance;
   }
 
   .Result-Section-Right {
     background:linear-gradient(to left, var(--color-Secondary),transparent);
     padding: 10px; padding-right: 50px; padding-top: 30px;
     align-items: right;
+    justify-content: right;
     text-align: right;
     border-right: 10px solid rgb(24, 24, 24);
   }
 
+  .Result-Paragraph-Right {
+    font-size: calc(5px + 2vmin);
+    color: white;
+    max-width: 50%; /* Adjust the maximum width as needed */
+    margin-left: 55%;
+    text-wrap: balance;
+  }

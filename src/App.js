@@ -28,8 +28,11 @@ function App() {
     const steamUrlInput = event.target.elements.steamUrl.value;
     // Calls checker function to see if URL is valid
     if (isValidSteamUrl(steamUrlInput)) {
-      setShowResults(true);
-      ScrollToResults();
+      // Uncomment the next line to allow for re-searching the same user
+      // setShowResults(false);
+      setTimeout(() => {
+        setShowResults(true);
+        ScrollToResults();},0)
     // If URL is invalid
     } else {
       setShowResults(false);
