@@ -13,18 +13,18 @@
   
   .Result-Section {
     font-size: calc(10px + 2vmin);
-    color: var(--color-Accent);
     font-family: "Segoe UI";
     padding: 100px;
   }
 
   .Result-Subtitle{
     text-decoration: underline;
-    margin-top: 300px;
+    margin-top: 50px;
     font-size: 30px;
   }
 
   .Result-Header {
+    font-weight: bold;
     font-size: calc(30px + 2vmin);
   }
 
@@ -44,13 +44,23 @@
     text-align: center;
   }
 
+  .Result-Paragraph {
+    color: white;
+  }
+
   .Result-Section-Left {
+    background:linear-gradient(to right, var(--color-Secondary),transparent);
+    padding: 10px; padding-left: 50px; padding-top: 30px;
     align-items: left;
     text-align: left;
+    border-left: 10px solid rgb(24, 24, 24);
   }
 
   .Result-Section-Right {
+    background:linear-gradient(to left, var(--color-Secondary),transparent);
+    padding: 10px; padding-right: 50px; padding-top: 30px;
     align-items: right;
     text-align: right;
+    border-right: 10px solid rgb(24, 24, 24);
   }
 

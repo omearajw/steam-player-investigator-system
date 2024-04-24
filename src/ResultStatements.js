@@ -33,16 +33,16 @@ export const numOfFriendsStatement = ({score}) => {
     else if ((score >= 0.90) && (score < 1)) {
         statement = "They have loads of friends, making it pretty unlikely this is a smurf account."
     }   
-    else if ((score >= 0.75) && (score < 0.90)) {
+    else if ((score >= 0.5) && (score < 0.90)) {
         statement = "They've got quite a few freinds. Chances are this is no smurf."
     }
-    else if ((score >= 0.5) && (score < 0.75)) {
+    else if ((score >= 0.25) && (score < 0.5)) {
         statement = "They have a decent number of friends. Unlikely to be a smurf"
     }
-    else if ((score >= 0.25) && (score < 0.5)) {
+    else if ((score >= 0.1) && (score < 0.25)) {
         statement = "They don't have a lot of friends... Suspicious."
     }
-    else if ((score >= 0.0) && (score < 0.25)) {
+    else if ((score >= 0.0) && (score < 0.1)) {
         statement = "They have literally no friends... Probably smurf."
     }
 
@@ -63,7 +63,7 @@ export const numOfGamesStatement = ({score}) => {
         statement = "They've got lots of games, no smurf here."
     }
     else if ((score >= 5) && (score < 20)) {
-        statement = "A decent library this... probably not a smurf."
+        statement = "A decent library... probably not a smurf."
     }
     else if ((score >= 3) && (score < 5)) {
         statement = "Not a load of games, a little suspicious..."
