@@ -23,6 +23,7 @@
     text-decoration: underline;
     margin-top: 50px;
     font-size: 30px;
+    cursor: pointer;
   }
 
   .Result-Header {
@@ -57,7 +58,7 @@
   .Result-Paragraph-Left {
     font-size: calc(5px + 2vmin);
     color: white;
-    max-width: 50%; /* Adjust the maximum width as needed */
+    max-width: 50%;
     margin-right: 55%;
     text-wrap: balance;
   }
@@ -74,7 +75,7 @@
   .Result-Paragraph-Right {
     font-size: calc(5px + 2vmin);
     color: white;
-    max-width: 50%; /* Adjust the maximum width as needed */
+    max-width: 50%;
     margin-left: 55%;
     text-wrap: balance;
   }

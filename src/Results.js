@@ -22,18 +22,52 @@ const handleMoreInfoClick = () => {
         }, 0)
 }
 
+// export const fetchResults = () => {}
+
 // Results section
 export const Results = () => {
-    // Define default userInfo with placeholder information
+    // Define userInfo object with default values
     const userInfo = {
-        userScore: 0.1,
-        username: "SmurfPlayer123",
-        numOfFriends: 0.5,
-        numOfGames: 362,
-        ageOfAccount: 4782,
-        hoursPlayed: 2407.0,
-        accountPrivacy: 0.0,
+        userScore: 0,
+        username: "",
+        numOfFriends: 0,
+        numOfGames: 0,
+        ageOfAccount: 0,
+        hoursPlayed: 0,
+        accountPrivacy: 0,
     };
+
+    fetch('http://localhost:8080/api/analyse-profile?steamid=76561198045900187')
+    .then(response => {
+        // Check if the response is OK
+        if (!response.ok) {
+            // Throw an error with the status text
+            console.log("FAILURE");
+            throw new Error('Network response was not ok');
+        }
+        // If the response is OK, parse it as JSON
+        return response.json()})
+    .then(data => {
+        // Check if the API call was successful
+        if (data.success) {
+            // Extract data from API response
+            const { userScore, factors } = data.data;
+
+            // Extract relevant data from the API response
+            userInfo.userScore = userScore;
+            userInfo.username = factors.find(factor => factor.factorName === "Username").score;
+            userInfo.numOfFriends = factors.find(factor => factor.factorName === "Number of friends").score;
+            userInfo.numOfGames = factors.find(factor => factor.factorName === "Number of games").score;
+            userInfo.ageOfAccount = factors.find(factor => factor.factorName === "Age of account (days)").score;
+            userInfo.hoursPlayed = factors.find(factor => factor.factorName === "Hours of played games").score;
+            userInfo.accountPrivacy = factors.find(factor => factor.factorName === "Account Privacy").score;
+        }
+    })
+    .catch(error => {
+        // Handle any errors that occurred during the fetch operation
+        console.error('Error fetching data:', error);
+        return(<div></div>)
+    });
 
     // These call the functions located in the ResultStatements file
     // They store the generated statements in corresponding variables
@@ -55,10 +89,10 @@ export const Results = () => {
             <div className="Result-Div-Main">
                 <header className="Result-Header-Main" >
                     <p>is <b>{userInfo.username}</b> a smurf?</p>
-                    <Bounce fraction="0.99" duration={1500} delay={1500}>
+                    <Bounce fraction={0.99} duration={1500} delay={1500}>
                         <h1 id="Smurf-Rating">{userScoreStatement}</h1>
                     </Bounce>
-                    <Fade fraction="0.99" duration={1500} delay={3000}>
+                    <Fade fraction={0.99} duration={1500} delay={3000}>
                         <p>{userInfo.userScore * 100}% chance of smurf</p>
                     </Fade>
                     <Fade delay={4500}>
@@ -76,7 +110,7 @@ export const Results = () => {
             {/* Each of the following sections follow the same layout
             They bounce in once 99% of the section is visible
             They have the title of the section and then the corresponding statement about that information */}
-            <Bounce fraction="0.99" left delay={1500}>
+            <Bounce fraction={0.99} left delay={1500}>
             <section id="First-Result-Section"className="Result-Section">
             <section className="Result-Section-Left">
                 <header className="Result-Header">Number of Friends - {userInfo.numOfFriends}</header>
@@ -86,7 +120,7 @@ export const Results = () => {
             </section>
             </Bounce>
 
-            <Bounce fraction="0.1" right delay={2000}>
+            <Bounce fraction={0.1} right delay={2000}>
             <section className="Result-Section">
             <section className="Result-Section-Right">
                 <header className="Result-Header">Number of Games - {userInfo.numOfGames}</header>
@@ -96,7 +130,7 @@ export const Results = () => {
             </section>
             </Bounce>
 
-            <Bounce fraction="0.65" left>
+            <Bounce fraction={0.65} left>
             <section className="Result-Section">
             <section className="Result-Section-Left">
                 <header className="Result-Header">Age of Account - {userInfo.ageOfAccount} days</header>
@@ -105,7 +139,7 @@ export const Results = () => {
             </section>
             </Bounce>
 
-            <Bounce fraction="0.65" right>
+            <Bounce fraction={0.65} right>
             <section className="Result-Section">
             <section className="Result-Section-Right">
                 <header className="Result-Header">Total Hours - {userInfo.hoursPlayed} hrs</header>
@@ -114,7 +148,7 @@ export const Results = () => {
             </section>
             </Bounce>
 
-            <Bounce fraction="0.65" left>
+            <Bounce fraction={0.65} left>
             <section className="Result-Section">
             <section className="Result-Section-Left">
                 <header className="Result-Header">Account Privacy - {userInfo.accountPrivacy}</header>

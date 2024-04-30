@@ -19,7 +19,7 @@ function App() {
     // Returns true of false if the URL conforms to the format
     return steamUrlRegex.test(url);
   }
-
+  
   // Submission handler taking the submission event
   const handleSubmit = (event) => {
     // Prevents default submission behaviour (page refresh)
