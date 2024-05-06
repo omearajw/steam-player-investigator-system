@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import search from './search.svg';
 import './App.css';
 import './Results.css';
-import { Results, ScrollToResults} from './Results.js';
+import { Results, ScrollToResults, fetchResults} from './Results.js';
 
 // https://steamcommunity.com/id/test
 
@@ -11,28 +11,33 @@ import { Results, ScrollToResults} from './Results.js';
 function App() {
   // State variable to manage whether results should be displayed
   const [showResults, setShowResults] = useState(false);
+  const [steamUrl, setSteamUrl] = useState("");
 
   // Function to check if the URL input by the user is valid
   function isValidSteamUrl(url) {
     // Pattern for the format of a steam profile link
     const steamUrlRegex = /^https:\/\/steamcommunity\.com\/id\/[a-zA-Z0-9_-]+\/?$/;
+    const steamUrlAltRegex = /^https:\/\/steamcommunity\.com\/profiles\/[a-zA-Z0-9_-]+\/?$/;
     // Returns true of false if the URL conforms to the format
-    return steamUrlRegex.test(url);
+    return steamUrlRegex.test(url) || steamUrlAltRegex.test(url);
   }
-  
+
   // Submission handler taking the submission event
   const handleSubmit = (event) => {
     // Prevents default submission behaviour (page refresh)
     event.preventDefault();
     // Gets value from the input
     const steamUrlInput = event.target.elements.steamUrl.value;
+    setSteamUrl(steamUrlInput);
     // Calls checker function to see if URL is valid
     if (isValidSteamUrl(steamUrlInput)) {
-      // Uncomment the next line to allow for re-searching the same user
-      // setShowResults(false);
+      // If url is valid then the results section is shown
+      setShowResults(false);
+      // Timeout is used to allow user to search again - otherwise results aren't refreshed
       setTimeout(() => {
         setShowResults(true);
-        ScrollToResults();},0)
+        ScrollToResults();
+      },0)
     // If URL is invalid
     } else {
       setShowResults(false);
@@ -53,6 +58,7 @@ function App() {
   }
 
   return (
+    // Once results are retrieved change app style to expanded version
     <div className={`App ${showResults ? 'expanded' : ''}`}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -70,7 +76,7 @@ function App() {
         </form>
       </header>
       <header className="Results-Header">
-        {showResults && <Results/>}
+        {showResults && <Results steamUrl={steamUrl}/>}
       </header>
     </div>
   );

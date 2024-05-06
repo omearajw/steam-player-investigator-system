@@ -6,11 +6,13 @@
     --color-Accent: #1a9fff;
   }  
   
+  /* Div used to encapsulate the entirety of the results */
   .Results-Div {
     background-color: var(--color-Main);
     color: var(--color-Accent);
   }
   
+  /* Used for each individual factor section */
   .Result-Section {
     font-size: calc(10px + 2vmin);
     font-family: "Segoe UI";
@@ -19,6 +21,7 @@
     padding-right: 100px;
   }
 
+  /* Subtext for explaination of each factor */
   .Result-Subtitle{
     text-decoration: underline;
     margin-top: 50px;
@@ -26,17 +29,25 @@
     cursor: pointer;
   }
 
+  /* Smaller text used for showing the score for each factor */
+  .Result-Score {
+    font-size: calc(5px + 2vmin);
+  }
+
+  /* The title of each factor */
   .Result-Header {
     font-weight: bold;
     font-size: calc(30px + 2vmin);
   }
 
+  /* Div used for first screen of results page (overall user score) */
   .Result-Div-Main {
     display: flex;
     justify-content: center;
     height: 95vh;
   }
 
+  /* Header of the first screen of results page */
   .Result-Header-Main {
     font-size: calc(30px + 2vmin);
     display: flex;
@@ -46,6 +57,7 @@
     text-align: center;
   }
 
+  /* Sections placed on left */
   .Result-Section-Left {
     background:linear-gradient(to right, var(--color-Secondary),transparent);
     padding: 10px; padding-left: 50px; padding-top: 30px;
@@ -55,6 +67,7 @@
     border-left: 10px solid rgb(24, 24, 24);
   }
 
+  /* Paragraphs placed on left */
   .Result-Paragraph-Left {
     font-size: calc(5px + 2vmin);
     color: white;
@@ -63,6 +76,7 @@
     text-wrap: balance;
   }
 
+  /* Sections placed on right */
   .Result-Section-Right {
     background:linear-gradient(to left, var(--color-Secondary),transparent);
     padding: 10px; padding-right: 50px; padding-top: 30px;
@@ -72,6 +86,7 @@
     border-right: 10px solid rgb(24, 24, 24);
   }
 
+  /* Paragraph placed on right */
   .Result-Paragraph-Right {
     font-size: calc(5px + 2vmin);
     color: white;

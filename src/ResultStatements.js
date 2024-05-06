@@ -27,25 +27,24 @@ export const isSmurfStatement = ({score}) => {
 export const numOfFriendsStatement = ({score}) => {
     let statement = "This is awkward."
 
-    if (score == 1.0) {
+    if (score >= 200.0) {
         statement = "They're really popular. This many friends makes it extremely unlikely this is a smurf account."
     }
-    else if ((score >= 0.90) && (score < 1)) {
+    else if ((score >= 50) && (score < 200)) {
         statement = "They have loads of friends, making it pretty unlikely this is a smurf account."
     }   
-    else if ((score >= 0.5) && (score < 0.90)) {
+    else if ((score >= 25) && (score < 50)) {
         statement = "They've got quite a few friends. Chances are this is no smurf."
     }
-    else if ((score >= 0.25) && (score < 0.5)) {
+    else if ((score >= 10) && (score < 25)) {
         statement = "They have a decent number of friends. Unlikely to be a smurf"
     }
-    else if ((score >= 0.1) && (score < 0.25)) {
+    else if ((score >= 3) && (score < 10)) {
         statement = "They don't have a lot of friends... Suspicious."
     }
-    else if ((score >= 0.0) && (score < 0.1)) {
-        statement = "They have literally no friends... Probably smurf."
+    else if ((score >= 0) && (score < 3)) {
+        statement = "They have barely any friends... Probably smurf."
     }
-
     return statement
 }
 

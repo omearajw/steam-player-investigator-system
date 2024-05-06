@@ -20,12 +20,14 @@ These are the hexcodes for the SPIS colour scheme:
   display: none;
 }
 
+/* Main application */
 .App {
   text-align: center;
   max-height: 100vh;
   overflow: hidden; 
 }
 
+/* Expanded application for when results are shown */
 .App.expanded {
   max-height: 100%; 
   transition: max-width 0.5s ease; 
@@ -33,17 +35,13 @@ These are the hexcodes for the SPIS colour scheme:
   overflow: hidden; 
 }
 
+/* Logo */
 .App-logo {
   height: 60vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 0s ease-in-out;
-  }
-}
-
+/* Main header */
 .App-header {
   background-color: var(--color-Main);
   min-height: 100vh;
@@ -56,12 +54,14 @@ These are the hexcodes for the SPIS colour scheme:
   font-family: "Segoe UI";
 }
 
+/* Form */
 .App-Form {
   display: flex;
   justify-content: center;
   height: 75px;
 }
 
+/* Input */
 .App-Input {
   width: 800px;
 
@@ -75,11 +75,13 @@ These are the hexcodes for the SPIS colour scheme:
   font-family: "Segoe UI";
 }
 
+/* Image for button */
 .App-Button-Image {
   width: 100%;
   height: 100%;
 }
 
+/* Button */
 .App-Button {
   width: 75px;
 
@@ -91,6 +93,7 @@ These are the hexcodes for the SPIS colour scheme:
   font-family: "Segoe UI";
 }
 
+/* Button when hovered */
 .App-Button:hover {
   color:#1a9fff;
   background-color: #30343c;

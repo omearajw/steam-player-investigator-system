@@ -12,8 +12,8 @@ Java is required.\
 
 Download the backend repo.\
 Navigate to the backend directory and open CMD `.../InvestigatorBackend`\
-Run this code: `Gradlew build`\
-Locate the newly made jar file in `.../build/libs` and run it\
+Run this code: `gradlew shadowJar` or `./gradlew shadowJar`\
+Locate the newly made jar file in `.../build/libs` and open CMD in that directory\
 
 Initialise a redis container in docker by running this code in CMD `docker run --name my-redis-container -p 6379:6379 -d redis\
 Ensure that new container to running.\
