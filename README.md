@@ -2,7 +2,7 @@
 
 In order to install the application you must download repo.\
 Open CMD and navigate to application directory `.../steam-player-investigator-system`\
-Run this code: `npm install`
+Run this code: `npm install --force`
 
 <!-- # Backend Instllation
 
@@ -15,6 +15,7 @@ Navigate to the backend directory and open CMD `.../InvestigatorBackend`\
 Run this code: `gradlew shadowJar` or `./gradlew shadowJar`\
 Locate the newly made jar file in `.../build/libs` and open CMD in that directory\
 
+Run Docker.\
 Initialise a redis container in docker by running this code in CMD `docker run --name my-redis-container -p 6379:6379 -d redis\
 Ensure that new container to running.\
 
