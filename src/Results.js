@@ -196,6 +196,8 @@ export const Results = ({steamUrl}) => {
                 </section>
                 </Bounce>
 
+                {/* 
+                Privacy section
                 <Bounce fraction={0.65} left>
                 <section className="Result-Section">
                 <section className="Result-Section-Left">
@@ -203,7 +205,7 @@ export const Results = ({steamUrl}) => {
                     <p className="Result-Paragraph-Left">{userInfo.accountPrivacy}</p>
                 </section>
                 </section>
-                </Bounce>
+                </Bounce> */}
             </div>
         );
     }
