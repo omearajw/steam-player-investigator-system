@@ -1,0 +1,7 @@
+Anon. (2024) Using React in Visual Studio Code, Visual Studio Code. Seattle. Available from https://code.visualstudio.com/docs/nodejs/reactjs-tutorial [accessed 27 March 2024].
+
+Maduekwe, C. (2020) hide scroll bar but keep functionality in react.js, Stack overflow. Available from https://stackoverflow.com/a/60352508 [accessed 22 April 2024].
+
+Nosov, R. (2017) React Reveal. Available from https://www.npmjs.com/package/react-reveal/v/0.3.3 [accessed 23 April 2024].
+
+Nnaemeka, E. (2023) Doing Animations With React Reveal, OpenReplay. Available from https://blog.openreplay.com/doing-animations-with-react-reveal/ [accessed 23 April 2024].
